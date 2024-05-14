@@ -1,0 +1,25 @@
+Validating VLAN Configuration on FortiGate Firewall
+
+Step 1: Accessing the FortiGate Interface
+
+    Log in to the FortiGate's Command Line Interface (CLI) or web interface using your login credentials.
+
+Step 2: Verifying VLAN Configuration
+
+    If you're using the CLI, type show system interface to see all configured interfaces, including VLAN interfaces.
+    Alternatively, in the web interface, navigate to Network > Interfaces to view interface configuration.
+
+Step 3: Verifying VLAN Interfaces
+
+    Check if there are VLAN interfaces for each VLAN configured on the Cisco switch.
+    Make sure the VLAN interfaces have the correct VLAN IDs assigned and are active.
+
+Step 4: Verifying VLAN Tagging
+
+    If the FortiGate connects to the Cisco switch via a trunk port, ensure VLAN tagging (802.1Q) is enabled on FortiGate interfaces.
+    Double-check the trunk interface configuration to confirm the allowed/tagged VLANs for communication with the switch.
+
+Step 5: Checking VLAN Membership
+
+    Review VLAN membership settings to ensure they're configured correctly for firewall policies, routing, and other network services.
+    Verify that VLANs are associated with the appropriate firewall policies and routing configurations.
