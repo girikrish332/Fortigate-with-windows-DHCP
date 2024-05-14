@@ -1,5 +1,5 @@
 # Cisco Switch VLAN Configuration README
-
+ 
 ## Overview
 This README provides instructions for configuring VLANs on a Cisco switch (SW1). VLANs (Virtual Local Area Networks) are used to segment network traffic for better organization, security, and efficiency.
 
