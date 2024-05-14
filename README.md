@@ -1,5 +1,5 @@
 # Cisco Switch VLAN Configuration README
- 
+
 ## Overview
 This README provides instructions for configuring VLANs on a Cisco switch (SW1). VLANs (Virtual Local Area Networks) are used to segment network traffic for better organization, security, and efficiency.
 
@@ -9,64 +9,104 @@ Follow these steps to configure VLANs on your Cisco switch:
 1. **Access the Switch:** Use a terminal emulator (e.g., PuTTY) to access the switch's command-line interface (CLI).
 
 2. **Enter Configuration Mode:**
-en config t
-markdown
+
+en 
+
+config t
+
 
 3. **Hostname Configuration:**
+
 hostname SW1
-markdown
+ 
 
 4. **VLAN Configuration:**
+
 vlan 10 
+
 name vlan10 
+
 no sh 
+
 exit
+
 vlan 20 
+
 name vlan20 
+
 no sh 
+
 exit
+
 vlan 30 name 
+
 vlan30 
-no sh 
-exit
-markdown
 
-5. **Access Port Configuration (VLAN 10):**
+no sh 
+
+exit
+
+ 
+
+6. **Access Port Configuration (VLAN 10):**
+
 interface range g0/0 - 3 
+
 switchport mode access 
+
 switchport access vlan 10 
-no sh 
-exit
-markdown
 
-6. **Access Port Configuration (VLAN 20):**
+no sh 
+
+exit
+
+ 
+
+7. **Access Port Configuration (VLAN 20):**
+
 interface range g1/0 - 3 
+
 switchport mode access 
+
 switchport access vlan 20 
-no sh 
-exit
-markdown
 
-7. **Trunk Port Configuration (VLAN 10, 20):**
+no sh 
+
+exit
+
+ 
+
+8. **Trunk Port Configuration (VLAN 10, 20):**
+
 interface g3/3 
+
 switchport mode trunk encapsulation dot1q 
+
 switchport mode trunk 
+
 switchport trunk allowed 
+
 vlan 10,20 
-no sh 
-exit
-markdown
 
-8. **SVI Configuration (VLAN 30):**
+no sh 
+
+exit
+ 
+
+9. **SVI Configuration (VLAN 30):**
+
 interface vlan 30 ip address 192.168.30.1 255.255.255.0 
-no sh 
-exit
-vbnet
 
-9. **Save Configuration:**
+no sh 
+
+exit
+
+
+10. **Save Configuration:**
 After completing the configuration, save the changes to the switch's startup configuration to ensure they persist across reboots:
+
 copy running-config startup-config
-vbnet
+
 
 ## Configuration Verification
 After configuring VLANs, you can verify the configuration using the following commands:
